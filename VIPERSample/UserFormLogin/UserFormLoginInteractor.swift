@@ -24,10 +24,28 @@ class UserFormLoginInteractor{
     
     
     
+    func createNewUser( viewModel : UserFormLoginPresenter.ResultViewModel) -> User {
     
-    func fromInteractorToRouter(){
+    let newUser = User()
+    
+        newUser.name = viewModel.name
+        newUser.surname = viewModel.surname
+        newUser.no = viewModel.no
+        newUser.gender = viewModel.gender
+        newUser.date = viewModel.date
+        return newUser
         
-        print("Interactor Worked!")
-        router.FromRouterToController(VC: controller)
     }
+    //CLOSURE SAMPLE - Create User Object
+    //        let setResultClosure : (UserFormLoginPresenter.ResultViewModel) -> User =
+    //        {( viewModel : UserFormLoginPresenter.ResultViewModel) -> User in
+    //
+    //        let newUser = User()
+    //
+    //        newUser.name = viewModel.name
+    //        newUser.surname = viewModel.surname
+    //        newUser.no = viewModel.no
+    //        return newUser
+    //    }
+
 }

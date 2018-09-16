@@ -10,11 +10,12 @@ import Foundation
 
 class User: Codable {
     
-    let name : String?
-    let surname : String?
-    let TC : String?
+    var name : String?
+    var surname : String?
+    var no : String?
     
-
+    var date : String?
+    var gender : String?
     
     
     

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomRowForUserList" customModule="VIPERSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y7q-GW-3j7">
+                    <rect key="frame" x="15" y="10" width="384" height="51.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noE-uH-KXg" userLabel="lblRowName">
+                            <rect key="frame" x="0.0" y="15.5" width="122.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJy-D3-p3d" userLabel="lblRowSurname">
+                            <rect key="frame" x="130.5" y="15.5" width="123" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFf-z1-9Hj" userLabel="lblRowGender">
+                            <rect key="frame" x="261.5" y="15.5" width="122.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV4-6M-6y1" userLabel="lblRowNo">
+                    <rect key="frame" x="15" y="77" width="384" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lio-x7-ff1" userLabel="lblRowDate">
+                    <rect key="frame" x="15" y="112.5" width="384" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Lio-x7-ff1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="1C4-sM-diE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lio-x7-ff1" secondAttribute="trailing" constant="15" id="70Q-4i-8bD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SV4-6M-6y1" secondAttribute="trailing" constant="15" id="77N-9V-SV9"/>
+                <constraint firstItem="Y7q-GW-3j7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="9Yh-vN-omi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Y7q-GW-3j7" secondAttribute="trailing" constant="15" id="F01-06-eVy"/>
+                <constraint firstItem="Y7q-GW-3j7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="M0f-oM-S9G"/>
+                <constraint firstItem="Y7q-GW-3j7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="VDk-Bp-Kgz"/>
+                <constraint firstItem="Lio-x7-ff1" firstAttribute="top" secondItem="SV4-6M-6y1" secondAttribute="bottom" constant="15" id="ay0-Pt-kb7"/>
+                <constraint firstItem="SV4-6M-6y1" firstAttribute="top" secondItem="Y7q-GW-3j7" secondAttribute="bottom" constant="15" id="fiU-pi-XFQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Lio-x7-ff1" secondAttribute="bottom" constant="10" id="gyt-6A-xiX"/>
+                <constraint firstItem="SV4-6M-6y1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="iVh-k9-T74"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lblDate" destination="Lio-x7-ff1" id="fSo-qp-AVo"/>
+                <outlet property="lblGender" destination="xFf-z1-9Hj" id="3zE-LP-Zuh"/>
+                <outlet property="lblName" destination="noE-uH-KXg" id="g4c-hN-jwb"/>
+                <outlet property="lblNo" destination="SV4-6M-6y1" id="79g-8w-usR"/>
+                <outlet property="lblSurname" destination="EJy-D3-p3d" id="Rf6-HR-6Nt"/>
+            </connections>
+            <point key="canvasLocation" x="-162" y="-369.5"/>
+        </view>
+    </objects>
+</document>

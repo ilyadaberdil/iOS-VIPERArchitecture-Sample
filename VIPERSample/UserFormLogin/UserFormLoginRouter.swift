@@ -20,13 +20,6 @@ class UserFormLoginRouter{
     
    class func setVIPER(viewController: UserFormLoginController){
     
-
-        
-//        VC.router = self
-//        VC.interactor = interactor
-//        VC.presenter = presenter
-//
-//
     
     let router = UserFormLoginRouter()
     let presenter = UserFormLoginPresenter()
@@ -50,43 +43,68 @@ class UserFormLoginRouter{
     
     
     
-    func FromRouterToController(VC: UserFormLoginController){
-        
-        print("Router Worked!")
-        //SignUpAccepted(VC2: UserFormLoginController)
-        showAlert(controller: VC)
-        
-    }
-    
-    func SignUpAccepted(VC: UserFormLoginController) {
-
-     //   let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      //  let linkingVC = storyboard.instantiateViewController(withIdentifier: "ShowVC")
-//        VC?.navigationController?.pushViewController(linkingVC, animated: true)
-    }
-    
-    
-    func showAlert(controller viewController: UserFormLoginController){
-        //  if let viewController3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FormVC") as? UserFormLoginController   {
-//        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//            switch action.style{
-//            case .default:
-//                print("default")
-//
-//            case .cancel:
-//                print("cancel")
-//
-//            case .destructive:
-//                print("destructive")
-//
-//
-//            }}))
-        //viewController.showAlert()
-           let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let linkingVC = storyboard.instantiateViewController(withIdentifier: "ShowVC")
-        viewController.navigationController?.pushViewController(linkingVC, animated: true)
-    }
+   
 
     
+    func pushResultToShow(_ result : User ){
+
+        
+        if let resultName=result.name,  let resultSurname = result.surname,  let resultNo=result.no, let resultGender=result.gender, let resultDate=result.date {
+            let newVC = ShowUserInfoRouter.newInstance(name: resultName, surname: resultSurname, no: resultNo, gender: resultGender, date:resultDate,onay: false ,delegate: self.viewController)
+            
+           // self.viewController?.present(newVC!, animated: true, completion: nil)
+            self.viewController?.navigationController?.pushViewController(newVC!, animated: true)
+            
+        }
+    }
+    
+
+    
+    func showAlertForEmptyInput()  {
+     
+                let alert = UIAlertController(title: "Hatalı Giriş!", message: "Formu Doldurunuz..", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "😀", style: .default, handler: { action in
+            self.alertActionHandler(action)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "☹️", style: .cancel, handler: { action in
+                self.alertActionHandler(action)
+            }))
+        
+      
+        
+        self.viewController?.present(alert, animated: true, completion: nil)
+}
+    
+    
+    func alertActionHandler(_ ac:UIAlertAction) {
+        switch ac.style{
+        case .default:
+            print("default")
+
+        case .cancel:
+            print("cancel")
+
+        case .destructive:
+            print("destructive")
+
+
+        }
+    }
+    
+    
+    
+    class func newInstance(delegate: UIViewController?) -> UserFormLoginController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier: "FormVC") as! UserFormLoginController
+        
+        return viewController
+    }
+    
+    
+    
+    
+
 }

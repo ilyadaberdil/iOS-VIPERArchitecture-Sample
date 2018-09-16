@@ -20,6 +20,13 @@
 		39102E562145377300408CDE /* ShowUserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39102E552145377300408CDE /* ShowUserInfoRouter.swift */; };
 		39102E592145378800408CDE /* ShowUserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39102E582145378800408CDE /* ShowUserInfoController.swift */; };
 		39102E5C214537DD00408CDE /* ShowUserInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39102E5B214537DD00408CDE /* ShowUserInfoInteractor.swift */; };
+		893F7B40214903860062ADCA /* CustomRowForUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893F7B3F214903860062ADCA /* CustomRowForUserList.swift */; };
+		893F7B42214903A60062ADCA /* CustomRowForUserList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893F7B41214903A60062ADCA /* CustomRowForUserList.xib */; };
+		896DF1182147D51C0052774F /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896DF1172147D51C0052774F /* Checkbox.swift */; };
+		89FA4E0521469DBD000DE87D /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FA4E0421469DBD000DE87D /* UserListController.swift */; };
+		89FA4E0721469DCC000DE87D /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FA4E0621469DCC000DE87D /* UserListPresenter.swift */; };
+		89FA4E0921469DDA000DE87D /* UserListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FA4E0821469DDA000DE87D /* UserListInteractor.swift */; };
+		89FA4E0B21469DE6000DE87D /* UserListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FA4E0A21469DE6000DE87D /* UserListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		39102E552145377300408CDE /* ShowUserInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoRouter.swift; sourceTree = "<group>"; };
 		39102E582145378800408CDE /* ShowUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoController.swift; sourceTree = "<group>"; };
 		39102E5B214537DD00408CDE /* ShowUserInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoInteractor.swift; sourceTree = "<group>"; };
+		893F7B3F214903860062ADCA /* CustomRowForUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRowForUserList.swift; sourceTree = "<group>"; };
+		893F7B41214903A60062ADCA /* CustomRowForUserList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomRowForUserList.xib; sourceTree = "<group>"; };
+		896DF1172147D51C0052774F /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		89FA4E0421469DBD000DE87D /* UserListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
+		89FA4E0621469DCC000DE87D /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenter.swift; sourceTree = "<group>"; };
+		89FA4E0821469DDA000DE87D /* UserListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListInteractor.swift; sourceTree = "<group>"; };
+		89FA4E0A21469DE6000DE87D /* UserListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,8 @@
 		39102E2E214534C600408CDE /* VIPERSample */ = {
 			isa = PBXGroup;
 			children = (
+				896DF1162147D50D0052774F /* UIComponents */,
+				89FA4E0321469DA2000DE87D /* UserList */,
 				39102E522145372900408CDE /* ShowUserInfo */,
 				39102E4F214536A300408CDE /* Models */,
 				39102E442145359000408CDE /* UserFormLogin */,
@@ -102,9 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				39102E31214534C600408CDE /* UserFormLoginController.swift */,
+				39102E4B2145367C00408CDE /* UserFormLoginPresenter.swift */,
 				39102E462145360F00408CDE /* UserFormLoginRouter.swift */,
 				39102E482145365100408CDE /* UserFormLoginInteractor.swift */,
-				39102E4B2145367C00408CDE /* UserFormLoginPresenter.swift */,
 			);
 			path = UserFormLogin;
 			sourceTree = "<group>";
@@ -120,12 +136,41 @@
 		39102E522145372900408CDE /* ShowUserInfo */ = {
 			isa = PBXGroup;
 			children = (
+				39102E582145378800408CDE /* ShowUserInfoController.swift */,
 				39102E532145374F00408CDE /* ShowUserInfoPresenter.swift */,
 				39102E552145377300408CDE /* ShowUserInfoRouter.swift */,
-				39102E582145378800408CDE /* ShowUserInfoController.swift */,
 				39102E5B214537DD00408CDE /* ShowUserInfoInteractor.swift */,
 			);
 			path = ShowUserInfo;
+			sourceTree = "<group>";
+		};
+		893F7B3E2149036A0062ADCA /* CustomTableRow */ = {
+			isa = PBXGroup;
+			children = (
+				893F7B3F214903860062ADCA /* CustomRowForUserList.swift */,
+				893F7B41214903A60062ADCA /* CustomRowForUserList.xib */,
+			);
+			path = CustomTableRow;
+			sourceTree = "<group>";
+		};
+		896DF1162147D50D0052774F /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				893F7B3E2149036A0062ADCA /* CustomTableRow */,
+				896DF1172147D51C0052774F /* Checkbox.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		89FA4E0321469DA2000DE87D /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				89FA4E0421469DBD000DE87D /* UserListController.swift */,
+				89FA4E0621469DCC000DE87D /* UserListPresenter.swift */,
+				89FA4E0A21469DE6000DE87D /* UserListRouter.swift */,
+				89FA4E0821469DDA000DE87D /* UserListInteractor.swift */,
+			);
+			path = UserList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +233,7 @@
 			files = (
 				39102E3A214534C700408CDE /* LaunchScreen.storyboard in Resources */,
 				39102E37214534C700408CDE /* Assets.xcassets in Resources */,
+				893F7B42214903A60062ADCA /* CustomRowForUserList.xib in Resources */,
 				39102E35214534C600408CDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,11 +246,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				39102E562145377300408CDE /* ShowUserInfoRouter.swift in Sources */,
+				89FA4E0721469DCC000DE87D /* UserListPresenter.swift in Sources */,
 				39102E592145378800408CDE /* ShowUserInfoController.swift in Sources */,
+				89FA4E0B21469DE6000DE87D /* UserListRouter.swift in Sources */,
+				89FA4E0921469DDA000DE87D /* UserListInteractor.swift in Sources */,
 				39102E492145365100408CDE /* UserFormLoginInteractor.swift in Sources */,
+				896DF1182147D51C0052774F /* Checkbox.swift in Sources */,
 				39102E32214534C600408CDE /* UserFormLoginController.swift in Sources */,
 				39102E51214536AE00408CDE /* User.swift in Sources */,
 				39102E472145360F00408CDE /* UserFormLoginRouter.swift in Sources */,
+				893F7B40214903860062ADCA /* CustomRowForUserList.swift in Sources */,
+				89FA4E0521469DBD000DE87D /* UserListController.swift in Sources */,
 				39102E4C2145367C00408CDE /* UserFormLoginPresenter.swift in Sources */,
 				39102E30214534C600408CDE /* AppDelegate.swift in Sources */,
 				39102E5C214537DD00408CDE /* ShowUserInfoInteractor.swift in Sources */,

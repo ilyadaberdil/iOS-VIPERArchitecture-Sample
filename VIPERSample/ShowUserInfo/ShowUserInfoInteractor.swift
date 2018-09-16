@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class ShowUserInfoInteractor {
+    
+    
+    
+    typealias P = ShowUserInfoPresenter
+    typealias R = ShowUserInfoRouter
+    typealias V = ShowUserInfoController
+    
+    
+    var presenter: P?
+    var router: R?
+    var viewController: V?
+    
+    
+}

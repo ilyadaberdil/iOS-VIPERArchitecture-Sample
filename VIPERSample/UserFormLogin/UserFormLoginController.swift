@@ -30,82 +30,203 @@ class UserFormLoginController: UIViewController {
     @IBOutlet weak var labelTCNo: UILabel!{
         didSet{
             labelTCNo.backgroundColor = #colorLiteral(red: 0.8424999118, green: 0.8157551289, blue: 1, alpha: 0)
-            labelTCNo.text = "TC No: "
+            labelTCNo.text = "No: "
             labelTCNo.font = UIFont(name: labelTCNo.font.fontName, size: 15)
         }
     }
     
-    
+    //if u set border on textfield, cursor will be dissappear so
+    //add border on that view.
+    @IBOutlet weak var textNameView: UIView!{
+        didSet
+        {
+            textNameView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            textNameView.layer.cornerRadius = 5
+            textNameView.layer.borderWidth = 2
+            
+        }
+        
+    }
     @IBOutlet weak var textName: UITextField!{
         didSet{
             textName.placeholder = " Adınızı Giriniz.."
-            textName.layer.cornerRadius = 5
-            textName.layer.borderWidth = 2
+         
             textName.layer.borderColor = UIColor.black.cgColor
+       
+            textName.endEditing(true)
             
             textName.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            textName.text = "TC No: "
             textName.font = UIFont(name: labelTCNo.font.fontName, size: 15)
+            
+
         }
     }
+
     
-    
-    
+    //if u set border on textfield, cursor will be dissappear so
+    //add border on that view.
+    @IBOutlet weak var textSurnameView: UIView!{
+        didSet{
+            textSurnameView.layer.cornerRadius = 5
+            textSurnameView.layer.borderWidth = 2
+            textSurnameView.layer.borderColor = UIColor.black.cgColor
+            textSurnameView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+
+        }
+    }
     
     @IBOutlet weak var textSurname: UITextField!{
         didSet{
             textSurname.placeholder = " Soyadınızı Giriniz.."
-            textSurname.layer.cornerRadius = 5
-            textSurname.layer.borderWidth = 2
-            textSurname.layer.borderColor = UIColor.black.cgColor
-            
+      
             textSurname.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-         //   textSurname.text = "TC No: "
             textSurname.font = UIFont(name: labelTCNo.font.fontName, size: 15)
         }
     }
     
-    
+    //if u set border on textfield, cursor will be dissappear so
+    //add border on that view.
+    @IBOutlet weak var textTCView: UIView!{
+        didSet{
+            textTCView.layer.cornerRadius = 5
+            textTCView.layer.borderWidth = 2
+            textTCView.layer.borderColor = UIColor.black.cgColor
+            textTCView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+
+            
+        }
+    }
     
     @IBOutlet weak var textTCNo: UITextField!{
         didSet{
             textTCNo.placeholder = " TC Kimlik Numaranızı Giriniz.."
-            textTCNo.layer.cornerRadius = 5
-            textTCNo.layer.borderWidth = 2
-            textTCNo.layer.borderColor = UIColor.black.cgColor
+   
             textTCNo.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             textTCNo.font = UIFont(name: labelTCNo.font.fontName, size: 15)
+//            if textTCNo.text?.characters.count == 4 {
+//                  textTCNo.text?.characters.removeLast()
+//            }
+           
+        }
+    }
+
+    @IBOutlet weak var lblGender: UILabel!{
+        didSet{
+            
+            lblGender.backgroundColor = #colorLiteral(red: 0.8424999118, green: 0.8157551289, blue: 1, alpha: 0)
+            lblGender.text = "Cinsiyet: "
+            lblGender.font = UIFont(name: labelName.font.fontName, size: 15)
+            
+        }
+    }
+    @IBOutlet weak var checkBoxMan: CheckBox!{
+        didSet{
+            
+            checkBoxMan.type = TypeofGender.man
+            checkBoxMan.isChecked = true
+          let checkBoxGesture = UITapGestureRecognizer(target: self, action: #selector(self.checkBoxManClicked))
+            
+          checkBoxMan.addGestureRecognizer(checkBoxGesture)
+            
+            
+            
+        }
+    }
+    
+    @IBOutlet weak var lblMan: UILabel!{
+        didSet{
+
+            lblMan.backgroundColor = #colorLiteral(red: 0.8424999118, green: 0.8157551289, blue: 1, alpha: 0)
+            lblMan.text = "Erkek"
+            lblMan.font = UIFont(name: labelName.font.fontName, size: 15)
+            
         }
     }
     
     
+    @IBOutlet weak var checkBoxWoman: CheckBox!{
+        didSet{
+            checkBoxWoman.type = TypeofGender.woman
+            let checkBoxGesture = UITapGestureRecognizer(target: self, action: #selector(checkBoxWomanClicked))
+
+            checkBoxWoman.addGestureRecognizer(checkBoxGesture)
+
+            
+            
+            
+        }
+    }
+    
+    @objc func checkBoxWomanClicked(_ recognizer:UITapGestureRecognizer){
+        
+        let sender = recognizer.view as? CheckBox
+        presenter?.setCheckboxClickEvent(sender!)
+
+    }
+    
+    @objc func checkBoxManClicked(_ recognizer:UITapGestureRecognizer){
+        
+        let sender = recognizer.view as? CheckBox
+        presenter?.setCheckboxClickEvent(sender!)
+        
+    }
     
     
-    
+    @IBOutlet weak var lblWoman: UILabel!{
+         didSet{
+            
+            lblWoman.backgroundColor = #colorLiteral(red: 0.8424999118, green: 0.8157551289, blue: 1, alpha: 0)
+            lblWoman.text = "Kadın"
+            lblWoman.font = UIFont(name: labelName.font.fontName, size: 15)
+            
+        }
+    }
+    @IBOutlet weak var datePicker: UIDatePicker!{
+        didSet{
+            
+        }
+    }
     
     @IBOutlet weak var buttonAccept: UIButton!{
         didSet{
             buttonAccept.layer.cornerRadius = 5
             buttonAccept.layer.borderWidth = 1
-            buttonAccept.layer.borderColor = UIColor.white.cgColor
+            buttonAccept.layer.borderColor = UIColor.black.cgColor
             
             buttonAccept.backgroundColor = #colorLiteral(red: 0.8424999118, green: 0.8157551289, blue: 1, alpha: 0)
             buttonAccept.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: UIControlState.normal)
-            buttonAccept.setTitle("Sign Up!", for: UIControlState.normal)
+            buttonAccept.setTitle("Submit!", for: UIControlState.normal)
             
            
             //SET GESTURE HERE!
-            let gestureForButtonAccept = UITapGestureRecognizer(target: self, action: #selector(self.buttonTapped))
+            let gestureForButtonAccept = UITapGestureRecognizer(target: self, action: #selector(self.acceptButtonTapped))
             buttonAccept.addGestureRecognizer(gestureForButtonAccept)
             
         }
     }
     
-    @objc func buttonTapped(){
+    @objc func acceptButtonTapped(){
         //Call Presenter!
         print("button Tapped!")
-        presenter?.FromPresenterToInteractor()
-       // showAlert()
+        let date : String = datePicker.date.localizedDescription
+        if(textName.text != "" && textSurname.text != "" && textTCNo.text != "" && (checkBoxWoman.isChecked || checkBoxMan.isChecked  ) ){
+            if isGenderManCheck(){
+                presenter?.submitForm(name: textName.text!,surname: textSurname.text!,no: textTCNo.text!,gender:"Erkek",dateDesc:date)
+
+            }
+            else if isGenderWomanCheck(){
+                presenter?.submitForm(name: textName.text!,surname: textSurname.text!,no: textTCNo.text!,gender:"Kadın",dateDesc:date)
+            }
+            else {
+                presenter?.showAlertforEmptyInput()
+            }
+        }
+            
+        else {
+            //call presenterShowAlert
+            presenter?.showAlertforEmptyInput()
+        }
+        
     }
 
     typealias P = UserFormLoginPresenter
@@ -125,9 +246,18 @@ class UserFormLoginController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        configureViper()
 
+        
     }
+    
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configureViper()
+    }
+    
+    
     func configureViper() {
         UserFormLoginRouter.setVIPER(viewController:self)
         
@@ -148,26 +278,31 @@ class UserFormLoginController: UIViewController {
 
 extension UserFormLoginController{
     
-    func showAlert(){
-      //  if let viewController3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FormVC") as? UserFormLoginController   {
-            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                switch action.style{
-                case .default:
-                    print("default")
-                    
-                case .cancel:
-                    print("cancel")
-                    
-                case .destructive:
-                    print("destructive")
-                    
-                    
-                }}))
-            self.present(alert, animated: true, completion: nil)
-     //   }
+   
+    func isGenderManCheck() -> Bool {
+        return checkBoxMan.isChecked
+    }
+    
+    func isGenderWomanCheck() -> Bool {
+        return checkBoxWoman.isChecked
     }
 
+    
+    func setGenderCheckboxView (checkForMan : Bool, checkForWoman: Bool) {
+        
+        checkBoxMan.isChecked = checkForMan
+        checkBoxWoman.isChecked = checkForWoman
+     
+        checkBoxMan.setClickImage()
+        checkBoxWoman.setClickImage()
 
+    }
+    
 }
-
+extension Date {
+    
+    //get date for location
+    var localizedDescription: String {
+        return description(with: .current)
+    }
+}
